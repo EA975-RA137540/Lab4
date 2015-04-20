@@ -225,6 +225,12 @@ public class Formulario {
 			public void actionPerformed(ActionEvent arg0) {
 				//contentPane.setVisible(false);
 				Print printForm = new Print();
+				if (tf_firstname.getText().isEmpty() || tf_lastname.getText().isEmpty() || tf_nascimento.getText().isEmpty() || tf_CPF.getText().isEmpty() )
+				{
+					System.out.println("Faltou preencher First Name/Last Name/Nascimento/CPF");
+				}
+				else
+				{
 				printForm.titleLabel.setText((String) comboBox.getSelectedItem());
 				printForm.firstNameLabel.setText(tf_firstname.getText());
 				printForm.lastNameLabel.setText(tf_lastname.getText());
@@ -238,9 +244,9 @@ public class Formulario {
 				printForm.cityLabel.setText(tf_city.getText());
 				printForm.stateLabel.setText(tf_state.getText());
 				printForm.countryLabel.setText(tf_country.getText());
-					
 				//printForm.contentPane.setVisible(true);				
 				printForm.show();	
+				}
 				
 			}
 		});
